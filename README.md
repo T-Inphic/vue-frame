@@ -18,11 +18,12 @@ npm run build
 npm run build --report
 ```
 
-##框架使用于PC端，框架未加入vuex
-###ui框架使用的是 [AT UIKIT](https://at-ui.github.io/at-ui/#/zh) 
+## 框架使用于PC端，框架未加入vuex
+### ui框架使用的是 [AT UIKIT](https://at-ui.github.io/at-ui/#/zh) 
 
 
 ``` bash
+#请求链接配置
 # src/api/requestUrl/index.js
 let url = {
 	'home': {
@@ -37,6 +38,12 @@ self.$http(self.$url.home,{abc:123}).then((res)=>{
 })
 
 
+
+```
+
+## mock数据使用mockjs
+``` bash
+# 使用mock是，以下配置需要设置
 # src/api/requestUrl/index.js
 let config = {
 	mock: true, //是否使用mock数据
@@ -44,10 +51,6 @@ let config = {
 	baseURL: '/wuyuan', //公共请求字段
 }
 
-```
-
-## mock数据使用mockjs
-``` bash
 # src/mock/config/index.js
 const home = Random => {
     let articles = [];
