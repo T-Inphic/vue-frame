@@ -10,7 +10,6 @@ let router = new Router(config)
 // 路由拦截器
 router.beforeEach((to, from, next) => {
 	if(to.meta.requireAuth){
-		console.log(1)
 		next()
 	}else{
 		next()

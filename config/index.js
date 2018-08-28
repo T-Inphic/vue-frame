@@ -12,7 +12,7 @@ module.exports = {
     proxyTable: {
         //跨域配置
         '/wuyuan/': {
-            target: 'http://172.16.100.52:9296/', // 你接口的域名
+            target: 'http://10.151.2.100:3011/', // 跨域配置项
             changeOrigin: true,
             pathRewrite: {
                 '^/api': ''

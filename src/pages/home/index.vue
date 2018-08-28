@@ -1,19 +1,24 @@
 <template>
   <div class="hello">
-    {{msg}}
+    <div v-for="(item, index) in data" :key="index">
+      <p>{{item.title}}<img :src="item.thumbnail_pic_s"/></p>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Home',
   data () {
     return {
-      msg: this.$url.home
+      data: '',
     }
   },
   mounted(){
-    this.$http(this.$url.home,{abc:123})
+    let self = this;
+    self.$http(self.$url.home,{abc:123}).then((res)=>{
+        self.data = res.data.articles
+    })
   }
 }
 </script>
