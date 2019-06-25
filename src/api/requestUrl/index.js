@@ -1,8 +1,5 @@
 let url = {
-	'home': {
-		'url': '/home',
-		'method': 'get'
-	}
+	'home': '/home'
 }
 
 export default url

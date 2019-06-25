@@ -15,9 +15,8 @@ export default {
     }
   },
   mounted(){
-    let self = this;
-    self.$http(self.$url.home,{abc:123}).then((res)=>{
-        self.data = res.data.articles
+    this.$get(this.$url.home,{abc:123}).then((res)=>{
+        this.data = res.data.articles
     })
   }
 }

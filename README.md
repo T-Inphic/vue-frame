@@ -26,14 +26,11 @@ npm run build --report
 #请求链接配置
 # src/api/requestUrl/index.js
 let url = {
-	'home': {
-		'url': '/home', //接口链接配置
-		'method': 'get',//默认get请求
-	}
+	'home': '/home'
 }
 
 # 使用方法
-self.$http(self.$url.home,{abc:123}).then((res)=>{
+this.$get(this.$url.home,{abc:123}).then((res)=>{
 
 })
 

@@ -39,12 +39,11 @@ axios.interceptors.response.use(res=>{
   	  return { data: { } }; //返回一个空对象，主要是防止控制台报错
 });
 
-function http(reqData,data){
-	method = reqData.method || 'get'
+const http = (req,data) => {
 	return new Promise((resolve, reject) => {
 	    axios({
-		    method: method,
-		    url: reqData.url,
+		    method: req.method,
+		    url: req.url,
 		    data: data,
 		    baseURL: config.baseURL,
 		    withCredentials: false, //是否带cookie
@@ -66,8 +65,22 @@ function http(reqData,data){
 	})
 }
 
+const get = (req,data) => {
+	return http({
+		method: 'get',
+		url: req
+	},data)
+}
 
+const post = (req,data) => {
+	return http({
+		method: 'post',
+		url: req
+	},data)
+}
 export {
 	http,
+	get,
+	post,
 	config
 }
